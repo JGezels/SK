@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Azure;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -51,15 +51,16 @@ namespace SK.CustomCopilot
             builder.Plugins.AddFromObject(new PlacesPlugin(Environment.ApiPlacesKey), nameof(PlacesPlugin));
             builder.Plugins.AddFromObject(new WeatherPlugin(Environment.ApiWeatherKey), nameof(WeatherPlugin));
 
-            var pluginsDirectory = Path.Combine("C:\\Users\\jangezels\\source\\repos\\SK\\SK", "Plugins", "MailPlugin");
+            //Make sure you change the path in the Environment File ;)
+            var pluginsDirectory = Path.Combine(Environment.PluginBaseFolder, "Plugins", "MailPlugin");
             builder.Plugins.AddFromPromptDirectory(pluginsDirectory, "MailPlugin");
 
             // Build the kernel
             var kernel = builder.Build();
 
-            // Add the Hotel plugin using the plugin manifest URL, this is done after the kernel build as it is a external plugin
+            // Add the OpenAPI plugin using the plugin manifest URL
             #pragma warning disable SKEXP0040
-            await kernel.ImportPluginFromOpenApiAsync("HotelPlugin", new Uri("http://jgebookingapi.azurewebsites.net/openapi.yaml"));                      
+            await kernel.ImportPluginFromOpenApiAsync("HotelPlugin", new Uri(Environment.MyAPIPlugin));                      
 
             // Create chat history
             ChatHistory history = [];
