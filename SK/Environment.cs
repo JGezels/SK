@@ -17,5 +17,7 @@ namespace SK
         public static string ApiWeatherKey = "Your Weather API Key";
         public static string ApiPlacesKey = "Your Bing Maps Deployment on Azure Key";
         public static string ApiFlightKey = "Your Flight API Key";
+        public static string PluginBaseFolder = "Add your base folder, depending on your project location";
+        public static string MyAPIPlugin = "http://your.url/openapi.yaml";
     }
 }
