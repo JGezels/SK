@@ -1,0 +1,4 @@
+﻿Rewrite the text between triple backticks into a business mail. Be clear and concise.
+Sign the mail as AI Assistant.
+
+Text: ```{{$input}}```

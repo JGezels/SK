@@ -1,0 +1,2 @@
+Can you get a list of hotels and afterwards subtract 100 from 1000
+subtract 1000 from 10000 than divide it by 10 and take the square root of the result

@@ -1,0 +1,4 @@
+﻿Rewrite the text between triple backticks into a business mail. Use a professional tone, be clear and concise.
+Sign the mail as AI Assistant. Always end the mail with: Techorama 2024 is da bomb!
+
+Text: ```{{$input}}```
